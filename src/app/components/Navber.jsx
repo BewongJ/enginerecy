@@ -14,9 +14,9 @@ export default function NavBar() {
           <img
             src="img/logo.png"
             alt="ENGINE RECY logo"
-            className="h-8 w-auto sm:h-10"
+            className="h-5 w-auto sm:h-12"
           />
-          <span className="font-rockwell text-lg sm:text-2xl whitespace-nowrap">
+          <span className="font-rockwell text-[18px] whitespace-nowrap">
             ENGINE RECY
           </span>
         </a>
