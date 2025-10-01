@@ -9,7 +9,6 @@ export default function NavBar() {
   return (
     <nav className="border-b border-neutral-800 bg-neutral-950 sticky top-0 z-50">
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
-        
         {/* Logo Section */}
         <a href="#top" className="flex items-center gap-2">
           <img
@@ -23,10 +22,16 @@ export default function NavBar() {
         </a>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex gap-6 text-base sm:text-lg font-rockwell">
-          <a href="#" className="text-primary-400">Home</a>
-          <a href="#product" className="hover:text-primary-400">Product</a>
-          <a href="#contact" className="hover:text-primary-400">Contact</a>
+        <div className="hidden md:flex gap-6 text-lg font-arialrounded leading-none tracking-wide">
+          <a href="#" className="text-primary-400">
+            Home
+          </a>
+          <a href="#product" className="hover:text-primary-400">
+            Product
+          </a>
+          <a href="#contact" className="hover:text-primary-400">
+            Contact
+          </a>
         </div>
 
         {/* Mobile Hamburger */}
@@ -40,10 +45,28 @@ export default function NavBar() {
 
       {/* Mobile Dropdown Menu */}
       {isOpen && (
-        <div className="md:hidden flex flex-col items-center gap-4 py-4 bg-neutral-900 text-lg font-rockwell">
-          <a href="#" className="text-primary-400" onClick={() => setIsOpen(false)}>Home</a>
-          <a href="#product" className="hover:text-primary-400" onClick={() => setIsOpen(false)}>Product</a>
-          <a href="#contact" className="hover:text-primary-400" onClick={() => setIsOpen(false)}>Contact</a>
+        <div className="md:hidden flex flex-col items-center gap-4 py-4 bg-neutral-900 ">
+          <a
+            href="#"
+            className="text-primary-400"
+            onClick={() => setIsOpen(false)}
+          >
+            Home
+          </a>
+          <a
+            href="#product"
+            className="hover:text-primary-400"
+            onClick={() => setIsOpen(false)}
+          >
+            Product
+          </a>
+          <a
+            href="#contact"
+            className="hover:text-primary-400"
+            onClick={() => setIsOpen(false)}
+          >
+            Contact
+          </a>
         </div>
       )}
     </nav>

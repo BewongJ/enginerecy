@@ -23,6 +23,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
+  /* ฟอนต์ให้เรียกใช้เป็น utility class */
   --font-rockwell: "Rockwell Extra Bold", sans-serif;
   --font-arialrounded: "Arial Rounded MT Regular", sans-serif;
 }
@@ -37,5 +38,5 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-rockwell);
+  /* เอา font-family ออก ไม่ fix font */
 }

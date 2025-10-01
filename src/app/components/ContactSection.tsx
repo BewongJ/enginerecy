@@ -14,7 +14,7 @@ export default function ContactSection() {
         <div className="space-y-4 text-left">
           <div className="space-y-3">
             {/* Email */}
-            <div className="flex items-center gap-2 text-white hover:text-white transition font-rockwell">
+            <div className="flex items-center gap-2 text-white hover:text-white transition font-arialrounded">
               <MailIcon className="w-5 h-5" />
               <span>enginerecy@gmail.com</span>
             </div>

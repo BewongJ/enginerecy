@@ -18,7 +18,7 @@ export default function HeroSlider() {
       {/* ข้อความคงที่ */}
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-10 ">
       <div className=" font-rockwell text-4xl mb-4 "> ENGING RECY </div>
-        <p className="mb-6 bg-black-500 font-rockwell text-2xl">
+        <p className="mb-6 bg-black-500 font-arialrounded text-2xl">
           Recycling junk car, creating new value for a sustainable world
         </p>
       </div>
