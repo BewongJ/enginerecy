@@ -3,7 +3,6 @@ import {
   Facebook,
   MailIcon,
   PhoneIcon,
-  Music2Icon,
 } from "lucide-react";
 
 export default function ContactSection() {

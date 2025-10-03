@@ -2,7 +2,15 @@
 import { useState } from "react";
 import Image from "next/image";
 
-const products = [
+type Product = {
+  id: number;
+  name: string;
+  desc: string;
+  price: string;
+  images: string[];
+};
+
+const products: Product[] = [
   {
     id: 1,
     name: "Engine Recy Model : StreetRim Table",
@@ -18,7 +26,7 @@ const products = [
 ];
 
 export default function ProductSection() {
-  const [selectedProduct, setSelectedProduct] = useState<any | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [activeImg, setActiveImg] = useState<string | null>(null);
 
   return (
@@ -80,7 +88,7 @@ export default function ProductSection() {
 
               {/* Thumbnail */}
               <div className="flex gap-2 mt-4 flex-wrap justify-center">
-                {selectedProduct.images.map((img: string, idx: number) => (
+                {selectedProduct.images.map((img, idx) => (
                   <div
                     key={idx}
                     className={`w-16 h-16 relative cursor-pointer border ${
@@ -101,10 +109,10 @@ export default function ProductSection() {
 
             {/* ข้อมูลสินค้า */}
             <div className="flex flex-col justify-center space-y-4">
-              <h2 className="text-2xl font-bold text-gray-900">
+              <h2 className="text-2xl font-bold text-gray-100">
                 {selectedProduct.name}
               </h2>
-              <p className="text-gray-600">{selectedProduct.desc}</p>
+              <p className="text-gray-300">{selectedProduct.desc}</p>
               <p className="text-3xl font-extrabold text-red-500">
                 {selectedProduct.price}
               </p>
@@ -113,9 +121,9 @@ export default function ProductSection() {
             {/* ปุ่มปิด */}
             <button
               onClick={() => setSelectedProduct(null)}
-              className="absolute top-2 right-2 text-gray-700 text-2xl md:text-3xl"
+              className="absolute top-2 right-2 text-gray-400 hover:text-gray-200 text-2xl md:text-3xl"
             >
-              X
+              ✕
             </button>
           </div>
         </div>
