@@ -5,7 +5,7 @@ import Image from "next/image";
 const products = [
   {
     id: 1,
-    name: "Comming Soon",
+    name: "Engine Recy Model : StreetRim Table",
     desc: "",
     price: "",
     images: [
