@@ -22,7 +22,7 @@ export default function ContactSection() {
             {/* Phone */}
             <div className="flex items-center gap-2 text-white hover:text-white transition">
               <PhoneIcon className="w-5 h-5" />
-              <span>06-3591-6545 MT | 09-8440-3355 JB</span>
+              <span>06-3591-6545 | 09-8440-3355 </span>
             </div>
           </div>
           <div className="space-y-3">

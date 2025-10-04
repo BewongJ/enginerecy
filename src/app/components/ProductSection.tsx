@@ -46,17 +46,19 @@ export default function ProductSection() {
               }}
               className="cursor-pointer rounded-xl overflow-hidden border border-neutral-800 bg-neutral-900/30 hover:scale-[1.02] transition"
             >
-              <div className="aspect-[4/3] relative">
+              <div className="aspect-[4/5] relative">
                 <Image
                   src={item.images[0]}
                   alt={item.name}
                   fill
-                  className="object-cover"
+                  className="object-fill"
                 />
               </div>
 
               <div className="p-4">
-                <h4 className="text-base md:text-lg font-semibold">{item.name}</h4>
+                <h4 className="text-base md:text-lg font-semibold">
+                  {item.name}
+                </h4>
                 <p className="text-xs md:text-sm text-gray-400">{item.desc}</p>
               </div>
             </div>
