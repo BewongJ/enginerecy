@@ -26,7 +26,7 @@ export default function NavBar() {
             Home
           </Link>
           <Link href="/products" className="hover:text-primary-400">
-            Product
+            Products
           </Link>
           <Link href="/contact" className="hover:text-primary-400">
             Contact
