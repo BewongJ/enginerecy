@@ -53,14 +53,14 @@ export default function NavBar() {
             Home
           </Link>
           <Link
-            href="/product"
+            href="/products"
             className="hover:text-primary-400"
             onClick={() => setIsOpen(false)}
           >
             Product
           </Link>
           <Link
-            href="/contact"
+            href="#contact"
             className="hover:text-primary-400"
             onClick={() => setIsOpen(false)}
           >
