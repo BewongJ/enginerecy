@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, X } from "lucide-react"; // ไอคอนจาก lucide-react
+import { Menu, X } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,11 +13,8 @@ export default function NavBar() {
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
         {/* Logo Section */}
         <a href="#top" className="flex items-center gap-2">
-          <img
-            src="img/logo.png"
-            alt="ENGINE RECY logo"
-            className="h-5 w-auto sm:h-12"
-          />
+          <img src="/img/logo.png" alt="ENGINE RECY logo" className="h-5 w-auto sm:h-12" />
+
           <span className="font-rockwell text-[18px] whitespace-nowrap">
             ENGINE RECY
           </span>
@@ -23,15 +22,15 @@ export default function NavBar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-6 text-lg font-arialrounded leading-none tracking-wide">
-          <a href="#" className="text-primary-400">
+          <Link href="/" className="text-primary-400 hover:text-primary-300">
             Home
-          </a>
-          <a href="#product" className="hover:text-primary-400">
+          </Link>
+          <Link href="/products" className="hover:text-primary-400">
             Product
-          </a>
-          <a href="#contact" className="hover:text-primary-400">
+          </Link>
+          <Link href="/contact" className="hover:text-primary-400">
             Contact
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Hamburger */}
@@ -45,28 +44,28 @@ export default function NavBar() {
 
       {/* Mobile Dropdown Menu */}
       {isOpen && (
-        <div className="md:hidden flex flex-col items-center gap-4 py-4 bg-neutral-900 ">
-          <a
-            href="#"
+        <div className="md:hidden flex flex-col items-center gap-4 py-4 bg-neutral-900">
+          <Link
+            href="/"
             className="text-primary-400"
             onClick={() => setIsOpen(false)}
           >
             Home
-          </a>
-          <a
-            href="#product"
+          </Link>
+          <Link
+            href="/product"
             className="hover:text-primary-400"
             onClick={() => setIsOpen(false)}
           >
             Product
-          </a>
-          <a
-            href="#contact"
+          </Link>
+          <Link
+            href="/contact"
             className="hover:text-primary-400"
             onClick={() => setIsOpen(false)}
           >
             Contact
-          </a>
+          </Link>
         </div>
       )}
     </nav>
