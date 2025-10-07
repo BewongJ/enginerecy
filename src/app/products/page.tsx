@@ -42,9 +42,6 @@ export default function ProductPage() {
         {/* Product Section */}
         <section className="px-6 py-12 max-w-7xl mx-auto">
           <h1 className="text-3xl font-bold mb-2 text-white">Engine Recy</h1>
-          <p className="text-gray-400 mb-8">
-            Recycling junk car, creating new value for a sustainable world.
-          </p>
 
           <div className="grid md:grid-cols-2 gap-6">
             {/* ✅ Product Card */}
