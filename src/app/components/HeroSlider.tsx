@@ -15,12 +15,12 @@ const images = [
 
 export default function HeroSlider() {
   return (
-    <div className="relative w-full h-screen overflow-hidden">
-      {/* ✅ Overlay มืดให้อ่านข้อความชัด */}
+    <div className="relative w-full overflow-hidden bg-black">
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black/40 z-10 pointer-events-none" />
 
-      {/* ✅ ข้อความตรงกลาง */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white z-20 px-4">
+      {/* ข้อความตรงกลาง (ไม่บังปุ่ม) */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white z-20 px-4 pointer-events-none text-overlay">
         <h1 className="font-rockwell text-4xl sm:text-6xl font-bold drop-shadow-lg mb-3">
           ENGINE RECY
         </h1>
@@ -29,77 +29,108 @@ export default function HeroSlider() {
         </p>
       </div>
 
-      {/* ✅ Swiper */}
+      {/* Swiper */}
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation
         pagination={{ clickable: true }}
         autoplay={{ delay: 4000, disableOnInteraction: false }}
         loop
-        className="w-full h-full"
+        className="w-full h-auto"
       >
         {images.map((item, i) => (
-          <SwiperSlide key={i} className="relative w-full h-full">
-            <div className="absolute inset-0">
-              <Image
-                src={item.src}
-                alt={item.alt}
-                fill
-                priority={i === 0}
-                className="image-fit"
-                sizes="100vw"
-              />
-            </div>
+          <SwiperSlide
+            key={i}
+            className="relative w-full aspect-[16/9] sm:aspect-[21/9]"
+          >
+            <Image
+              src={item.src}
+              alt={item.alt}
+              fill
+              priority={i === 0}
+              className="object-cover bg-black"
+              sizes="100vw"
+            />
           </SwiperSlide>
         ))}
       </Swiper>
 
-      {/* ✅ CSS ปรับ responsive + crop ขอบดำ */}
+      {/* ✅ CSS สำหรับ Next.js */}
       <style jsx global>{`
-        /* --- ปุ่มเลื่อน --- */
+        /* ปุ่มลูกศร Swiper */
         .swiper-button-prev,
         .swiper-button-next {
           color: white !important;
-          transition: opacity 0.3s;
-          top: 50%;
-          transform: translateY(-50%);
-          z-index: 30;
+          width: 50px;
+          height: 50px;
+          background-color: rgba(0, 0, 0, 0.6);
+          border: 2px solid white;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s ease;
+          z-index: 50 !important;
+          pointer-events: auto !important;
         }
+
+        .swiper-button-prev {
+          left: 25px !important;
+        }
+        .swiper-button-next {
+          right: 25px !important;
+        }
+
         .swiper-button-prev:hover,
         .swiper-button-next:hover {
-          opacity: 0.8;
+          background-color: #facc15;
+          color: black !important;
+          transform: scale(1.1);
         }
+
+        /* จุด pagination */
         .swiper-pagination-bullet {
           background: white;
-          opacity: 0.7;
+          opacity: 0.6;
+          transition: all 0.3s ease;
         }
         .swiper-pagination-bullet-active {
           background: #facc15;
           opacity: 1;
         }
 
-        /* --- responsive ปุ่มใหญ่ขึ้นในมือถือ --- */
+        /* 📱 Responsive ปรับสำหรับมือถือ */
         @media (max-width: 768px) {
+          /* ลดขนาดฟอนต์และเลื่อนข้อความขึ้น */
+          .text-overlay {
+            top: 20% !important;
+            transform: translateY(0) !important;
+          }
+
+          .text-overlay h1 {
+            font-size: 2rem !important;
+          }
+
+          .text-overlay p {
+            font-size: 1rem !important;
+            padding: 0.3rem 0.8rem !important;
+          }
+
+          /* ปุ่มเลื่อนลงด้านล่าง ไม่ชนข้อความ */
           .swiper-button-prev,
           .swiper-button-next {
-            width: 50px;
-            height: 50px;
-            color: #fff !important;
+            width: 40px;
+            height: 40px;
+            top: auto !important;
+            bottom: 20px !important;
           }
-        }
 
-        /* --- ปรับภาพให้เต็มจอทุก device --- */
-        .image-fit {
-          object-fit: cover;
-          object-position: center;
-        }
+          .swiper-button-prev {
+            left: 15px !important;
+          }
 
-        @media (max-width: 768px) {
-          /* ✅ มือถือ: ตัดเฉพาะขอบดำบนล่าง */
-          .image-fit {
-            object-fit: cover !important;
-            object-position: center 40% !important; /* เลื่อนขึ้นเล็กน้อยให้เห็นรถเต็ม */
-            background-color: black;
+          .swiper-button-next {
+            right: 15px !important;
           }
         }
       `}</style>

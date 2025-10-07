@@ -20,7 +20,7 @@ export default function ProductDetail() {
     "/img/product5.png",
   ];
 
-  // สำหรับ swipe ในมือถือ
+  // For swipe on mobile
   const handlers = useSwipeable({
     onSwipedLeft: () => setSelectedImage((prev) => (prev + 1) % images.length),
     onSwipedRight: () =>
@@ -36,7 +36,7 @@ export default function ProductDetail() {
         <div className="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-2 gap-12">
           {/* Left images */}
           <div>
-            {/* ✅ มือถือ: swipe slider */}
+            {/* ✅ Mobile: swipe slider */}
             <div
               className="relative w-full h-[400px] rounded-2xl overflow-hidden shadow-lg md:hidden"
               {...handlers}
@@ -47,7 +47,7 @@ export default function ProductDetail() {
                 fill
                 className="object-cover"
               />
-              {/* จุดบอกตำแหน่งรูป */}
+              {/* Image indicator dots */}
               <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
                 {images.map((_, i) => (
                   <span
@@ -96,17 +96,25 @@ export default function ProductDetail() {
 
           {/* Right Info */}
           <div>
-            <h1 className="text-3xl font-bold mb-2">
-              Engine Recy Model : StreetRim Table
+            <h1 className="text-2xl sm:text-3xl font-bold mb-2 text-white">
+              Engine Recy
             </h1>
-            <p className="text-gray-400 mb-4">ฐานโต๊ะผลิตจาก ล้อแม๊ก</p>
-            <p className="text-2xl font-semibold mb-6 text-white">9900 THB</p>
+            <h1 className="text-2xl sm:text-3xl font-bold mb-2 text-white">
+              Model: StreetRim Table
+            </h1>
+
+            <p className="text-gray-400 mb-4">
+              The table base is made from car rims.
+            </p>
+            <p className="text-2xl font-semibold mb-6 text-white">
+              Price: 9,900 THB
+            </p>
 
             <button
               onClick={() => setOpen(true)}
               className="flex items-center justify-between w-full md:w-[350px] font-semibold text-lg text-black bg-white rounded-lg p-4 hover:bg-gray-100 transition"
             >
-              <span>รายละเอียดสินค้า</span>
+              <span>Product Details</span>
               <ChevronRight size={20} />
             </button>
           </div>
@@ -137,31 +145,50 @@ export default function ProductDetail() {
         `}
       >
         <div className="flex items-center justify-between p-4 border-b border-gray-200">
-          <h2 className="text-xl font-semibold">รายละเอียดสินค้า</h2>
+          <h2 className="text-xl font-semibold">Product Details</h2>
           <button onClick={() => setOpen(false)}>
             <X size={24} />
           </button>
         </div>
 
-        <div className="p-4 space-y-3 overflow-y-auto h-[calc(100%-64px)]">
-          <p>ชื่อสินค้า : Engine Recy Model : StreetRim Table</p>
-          <p>ออกแบบโดย : Designed by : Engine Recy</p>
-          <p className="font-semibold mt-2">วัสดุและการดูแล:</p>
-          <ul className="list-disc list-inside space-y-1">
-            <li>
-              ฐานโต๊ะผลิตจาก ล้อแม๊กจริงจากอะไหล่รถยนต์ ผ่านการทำความสะอาด
-              เคลือบกันสนิม และพ่นสีดำด้าน
-            </li>
-            <li>
-              ด้านบนเป็น กระจกนิรภัยใสหนา 5 มม. เส้นผ่านศูนย์กลางกระจก: 56.5
-              ซม.ให้ความแข็งแรงและสวยงาม
-            </li>
-            <li>
-              ด้านล่างเป็น ฐานไม้อัดวงกลม เส้นผ่านศูนย์กลาง 46.5 CM เคลือบสีดำ{" "}
-            </li>
-          </ul>
-          <p className="font-semibold mt-2">ขนาดสินค้า:</p>
-          <p>ความสูงรวม: 36 ซม.</p>
+        {/* ✅ Updated Product Detail Text */}
+        <div className="p-4 space-y-4 overflow-y-auto h-[calc(100%-64px)] text-gray-800 leading-relaxed">
+          <p>
+            <strong>Product Description</strong>
+            <br />
+            Suitable for use as a coffee table in the living room or as a side
+            table. Designed to add both character and comfort to your space
+            while keeping a unique industrial charm that stands out in any
+            corner.
+          </p>
+
+          <p>
+            <strong>Designed by:</strong> Engine Recy
+            <br />
+            <strong>Model:</strong> StreetRim Table
+          </p>
+
+          <p>
+            <strong>Materials:</strong>
+            <br />
+            The base is made from genuine car rims, thoroughly cleaned and
+            polished. It’s coated with anti-rust protection and finished in
+            matte black for a refined look.
+            <br />
+            <br />
+            The tabletop is crafted from 5 mm thick tempered glass with a center
+            diameter of 56.5 cm, providing both durability and elegance.
+            <br />
+            <br />
+            The lower base is made of circular plywood, with a center diameter
+            of 46.5 cm, coated in black paint for extra strength and harmony
+            with the design.
+          </p>
+
+          <p>
+            <br />
+            Total height: 36 cm
+          </p>
         </div>
       </div>
 

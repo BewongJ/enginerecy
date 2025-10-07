@@ -54,7 +54,8 @@ export default function ProductPage() {
                   className="object-cover opacity-90 hover:opacity-100 transition"
                 />
                 <div className="absolute bottom-4 left-4 bg-black/60 px-4 py-2 rounded-lg text-sm">
-                  <p className="font-semibold">Engine Recy Model : StreetRim Table</p>
+                  <p className="font-semibold">Engine Recy </p>
+                  <p className="font-semibold" >Model : StreetRim Table</p>
                   <p className="text-gray-300">9,900 THB</p>
                 </div>
               </Link>
