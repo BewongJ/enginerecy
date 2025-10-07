@@ -156,9 +156,8 @@ export default function ProductDetail() {
           <p>
             <strong>Product Description</strong>
             <br />
-            Suitable for use as a coffee table in the living room or as a side
-            table. Designed to add both character and comfort to your space
-            while keeping a unique industrial charm that stands out in any
+            Perfect for use as a center table in your living room or paired with
+            picnic chairs to add a cool and unique touch to your relaxing
             corner.
           </p>
 
@@ -171,18 +170,16 @@ export default function ProductDetail() {
           <p>
             <strong>Materials:</strong>
             <br />
-            The base is made from genuine car rims, thoroughly cleaned and
-            polished. It’s coated with anti-rust protection and finished in
-            matte black for a refined look.
+            The table base is made from genuine alloy wheels from automotive
+            parts, cleaned, rust-proofed and painted in matte black.
             <br />
             <br />
-            The tabletop is crafted from 5 mm thick tempered glass with a center
-            diameter of 56.5 cm, providing both durability and elegance.
+            The top is made of 5mm thick clear tempered glass. Glass diameter:
+            56.5cm. Provides strength and beauty.
             <br />
             <br />
-            The lower base is made of circular plywood, with a center diameter
-            of 46.5 cm, coated in black paint for extra strength and harmony
-            with the design.
+            The base is made of round plywood, 46.5 cm in diameter, coated in
+            black.
           </p>
 
           <p>
