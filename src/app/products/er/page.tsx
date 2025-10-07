@@ -105,7 +105,7 @@ export default function ProductDetail() {
             </h1>
 
             <p className="text-gray-400 mb-4">
-              The table base is made From junk car.
+              The wheels table is made from junk car.
             </p>
             <p className="text-2xl font-semibold mb-6 text-white">
               Price: 9,900 THB
