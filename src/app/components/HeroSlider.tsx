@@ -24,7 +24,7 @@ export default function HeroSlider() {
         <h1 className="font-rockwell text-4xl sm:text-6xl font-bold drop-shadow-lg mb-3">
           ENGINE RECY
         </h1>
-        <p className="text-lg sm:text-2xl font-arialrounded bg-black/40 px-4 py-2 rounded-xl backdrop-blur-sm shadow-md">
+        <p className="text-lg sm:text-2xl font-arialrounded  px-4 py-2  ">
           Recycling junk car, creating new value for a sustainable world
         </p>
       </div>
