@@ -20,7 +20,6 @@ export default function ProductDetail() {
     "/img/product5.png",
   ];
 
-  // For swipe on mobile
   const handlers = useSwipeable({
     onSwipedLeft: () => setSelectedImage((prev) => (prev + 1) % images.length),
     onSwipedRight: () =>
@@ -33,21 +32,21 @@ export default function ProductDetail() {
       <NavBar />
 
       <main className="flex-grow">
-        <div className="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-2 gap-12">
-          {/* Left images */}
-          <div>
+        {/* ✅ รูปและข้อความอยู่ระดับเดียวกันไม่มีช่องว่าง */}
+        <div className="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-2 gap-6 items-start md:items-start">
+          {/* ✅ Left: Images */}
+          <div className="flex flex-col justify-start">
             {/* ✅ Mobile: swipe slider */}
             <div
-              className="relative w-full h-[400px] rounded-2xl overflow-hidden shadow-lg md:hidden"
+              className="relative w-full h-[380px] rounded-2xl overflow-hidden shadow-lg md:hidden flex items-start justify-center"
               {...handlers}
             >
               <Image
                 src={images[selectedImage]}
                 alt="main product"
                 fill
-                className="object-cover"
+                className="object-contain"
               />
-              {/* Image indicator dots */}
               <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
                 {images.map((_, i) => (
                   <span
@@ -61,8 +60,9 @@ export default function ProductDetail() {
             </div>
 
             {/* ✅ Desktop: thumbnails + main image */}
-            <div className="hidden md:flex gap-4">
-              <div className="flex flex-col gap-3">
+            <div className="hidden md:flex gap-6 items-start">
+              {/* thumbnails */}
+              <div className="flex flex-col gap-3 justify-start">
                 {images.map((img, index) => (
                   <div
                     key={index}
@@ -83,23 +83,24 @@ export default function ProductDetail() {
                 ))}
               </div>
 
-              <div className="relative flex-1 h-[800px] rounded-2xl overflow-hidden shadow-lg">
+              {/* ✅ main large image (ชิดบนแนวเดียวกับข้อความ) */}
+              <div className="relative flex-1 h-[700px] rounded-2xl overflow-hidden shadow-lg flex items-start justify-center">
                 <Image
                   src={images[selectedImage]}
                   alt="main product"
                   fill
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
             </div>
           </div>
 
-          {/* Right Info */}
-          <div>
-            <h1 className="text-2xl sm:text-3xl font-bold mb-2 text-white">
+          {/* ✅ Right Info (ชิดบนสุดแนวเดียวกับรูป) */}
+          <div className="flex flex-col justify-start">
+            <h1 className="text-2xl sm:text-3xl font-bold mb-2 text-white leading-tight">
               Engine Recy
             </h1>
-            <h1 className="text-2xl sm:text-3xl font-bold mb-2 text-white">
+            <h1 className="text-2xl sm:text-3xl font-bold mb-2 text-white leading-tight">
               Model: StreetRim Table
             </h1>
 
@@ -121,7 +122,7 @@ export default function ProductDetail() {
         </div>
       </main>
 
-      {/* Background blur */}
+      {/* ✅ Background blur when open */}
       {open && (
         <div
           className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
@@ -129,7 +130,7 @@ export default function ProductDetail() {
         ></div>
       )}
 
-      {/* Slide-over panel */}
+      {/* ✅ Slide-over panel */}
       <div
         className={`fixed bg-white text-gray-900 z-50 shadow-2xl transform transition-transform duration-300
           h-full sm:h-full
@@ -151,7 +152,6 @@ export default function ProductDetail() {
           </button>
         </div>
 
-        {/* ✅ Updated Product Detail Text */}
         <div className="p-4 space-y-4 overflow-y-auto h-[calc(100%-64px)] text-gray-800 leading-relaxed">
           <p>
             <strong>Product Description</strong>

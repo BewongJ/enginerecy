@@ -62,7 +62,7 @@ export default function ProductPage() {
                 <div className="absolute bottom-4 left-4 bg-black/70 px-4 py-2 rounded-lg text-sm backdrop-blur-sm">
                   <p className="font-semibold">Engine Recy</p>
                   <p>Model : StreetRim Table</p>
-                  <p className="text-gray-300">9,900 THB</p>
+                  <p className="text-gray-300">Price: 9,900 THB</p>
                 </div>
               </Link>
             </div>
