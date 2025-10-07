@@ -22,12 +22,9 @@ export default function ProductDetail() {
 
   // สำหรับ swipe ในมือถือ
   const handlers = useSwipeable({
-    onSwipedLeft: () =>
-      setSelectedImage((prev) => (prev + 1) % images.length),
+    onSwipedLeft: () => setSelectedImage((prev) => (prev + 1) % images.length),
     onSwipedRight: () =>
-      setSelectedImage(
-        (prev) => (prev - 1 + images.length) % images.length
-      ),
+      setSelectedImage((prev) => (prev - 1 + images.length) % images.length),
     trackMouse: true,
   });
 
@@ -131,7 +128,11 @@ export default function ProductDetail() {
           w-full sm:w-[400px]
           bottom-0 sm:top-0
           sm:right-0
-          ${open ? "translate-y-0 sm:translate-x-0" : "translate-y-full sm:translate-x-full"}
+          ${
+            open
+              ? "translate-y-0 sm:translate-x-0"
+              : "translate-y-full sm:translate-x-full"
+          }
           rounded-t-2xl sm:rounded-none
         `}
       >
@@ -147,9 +148,17 @@ export default function ProductDetail() {
           <p>ออกแบบโดย : Designed by : Engine Recy</p>
           <p className="font-semibold mt-2">วัสดุและการดูแล:</p>
           <ul className="list-disc list-inside space-y-1">
-            <li>ฐานโต๊ะผลิตจาก ล้อแม๊กจริง...</li>
-            <li>ด้านบนเป็น กระจกนิรภัยใสหนา 5 มม.</li>
-            <li>ด้านล่างเป็น ฐานไม้อัดวงกลม เคลือบสีดำ</li>
+            <li>
+              ฐานโต๊ะผลิตจาก ล้อแม๊กจริงจากอะไหล่รถยนต์ ผ่านการทำความสะอาด
+              เคลือบกันสนิม และพ่นสีดำด้าน
+            </li>
+            <li>
+              ด้านบนเป็น กระจกนิรภัยใสหนา 5 มม. เส้นผ่านศูนย์กลางกระจก: 56.5
+              ซม.ให้ความแข็งแรงและสวยงาม
+            </li>
+            <li>
+              ด้านล่างเป็น ฐานไม้อัดวงกลม เส้นผ่านศูนย์กลาง 46.5 CM เคลือบสีดำ{" "}
+            </li>
           </ul>
           <p className="font-semibold mt-2">ขนาดสินค้า:</p>
           <p>ความสูงรวม: 36 ซม.</p>
