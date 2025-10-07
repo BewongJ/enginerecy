@@ -20,7 +20,7 @@ export default function Page() {
       <main className="flex-grow">
         {/* Product Section */}
         <section className="px-6 py-12 max-w-7xl mx-auto">
-          <h1 className="text-3xl font-bold mb-2 text-white">Engine Recy</h1>
+          <h1 className="text-3xl font-bold mb-2 text-white">Product</h1>
           <div className="grid md:grid-cols-2 gap-6">
             {/* ✅ Product Card */}
             <div className="relative w-full h-64 sm:h-80 md:h-[400px] rounded-2xl overflow-hidden shadow-lg">
